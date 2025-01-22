@@ -1,0 +1,21 @@
+﻿<Window x:Class="SNIPER_ASSASSIN.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SNIPER_ASSASSIN"
+        mc:Ignorable="d"
+         Title="MainWindow" ResizeMode="CanMinimize" Height="450" Width="800" FocusManager.FocusedElement="{Binding ElementName=MyCanvas}">
+    <Grid>
+        <Canvas Name="MyCanvas" Focusable="True" MouseLeftButtonDown="ShootDummy" MouseMove="Canvas_MouseMove" Background="LightBlue">
+            <Image Name="scopeImage" Height="60" Width="60" Canvas.Left="301" Canvas.Top="275" IsHitTestVisible="False" Panel.ZIndex="999"/>
+            <Label Name="scoreText" Content="Score: " FontSize="14" Foreground="Black" Canvas.Left="660" Canvas.Top="65"/>
+            <Label Name="missText" Content="Miss: " FontSize="14" Foreground="Black" Canvas.Left="660" Canvas.Top="20"/>
+        </Canvas>
+        <Grid x:Name="GAMEOVERSCREEN" Background="Black" Visibility="Collapsed" >
+            <TextBlock Text="GAME OVER!!" FontSize="48" Foreground="Red" Margin="0,0,0,100" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Jokerman"></TextBlock>
+            <TextBlock Name="Gameendscore" Margin="0,0,0,0" Foreground="DeepPink" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="28" FontFamily="Jokerman" ></TextBlock>
+            <TextBlock Text="Press Enter to Play Again" Margin="0,0,0,-100" Foreground="HotPink" FontSize="18" FontFamily="Jokerman" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Window>
